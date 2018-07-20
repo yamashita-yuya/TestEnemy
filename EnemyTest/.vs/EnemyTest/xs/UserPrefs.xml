@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{BFD45396-B304-A6A8-533B-127E485D1D2E}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MouseOnContinue.cs">
+    <Files>
+      <File FileName="Assets/Scripts/EnemyControl.cs" Line="68" Column="1" />
+      <File FileName="Assets/Scripts/PlayerControl.cs" Line="119" Column="1" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="47" Column="57" />
+      <File FileName="Assets/Scripts/MouseOnContinue.cs" Line="26" Column="1" />
+      <File FileName="Assets/Scripts/MouseOnExit.cs" Line="6" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
