@@ -5,11 +5,14 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour {
 	[SerializeField] private GameObject Player;
 	Vector3 targetPos;
+    //カメラの初期位置
+    Vector3 cameraStartPos;
 	// Use this for initialization
 	void Start()
 	{
 	    Player = GameObject.Find("Player");
 		targetPos = Player.transform.position;
+        cameraStartPos = this.transform.position;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -39,4 +42,8 @@ public class CameraControl : MonoBehaviour {
             */
 		}
 	}
+    //カメラの初期化
+    public void InitCamera() {
+        this.transform.position = cameraStartPos;
+    }
 }

@@ -112,7 +112,8 @@ public class PlayerControl : MonoBehaviour {
             Destroy(this.gameObject);
 			Destroy(lifeUi);
 			Destroy(scoreUi);
-			Destroy(scoreUi);
+			Destroy(timeUi);
+            FindObjectOfType<Manager>().GameOver();
         }
 	}
 }

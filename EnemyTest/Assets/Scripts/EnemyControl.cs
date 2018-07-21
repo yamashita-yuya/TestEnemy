@@ -54,7 +54,7 @@ public class EnemyControl : MonoBehaviour {
 		if(coll.gameObject.tag == "PlayerBullet"){
 			Enemylife -= 1;
 			Destroy(coll.gameObject);
-			Debug.Log(Enemylife);
+			//Debug.Log(Enemylife);
 			if (Enemylife <= 1)
 			{
 				Instantiate(Explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
@@ -64,4 +64,11 @@ public class EnemyControl : MonoBehaviour {
 			}
 		}
 	}
+    //初期化
+    public void InitEnemy() {
+        if (this != null)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

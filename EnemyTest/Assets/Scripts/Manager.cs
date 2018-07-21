@@ -34,6 +34,13 @@ public class Manager : MonoBehaviour {
 	private GameObject continuePanelText;
 	//倒した敵の数
 	int countDestroyEnemy;
+    //色相
+    int hueTitle;
+    int hueYourScore;
+    //ゲーム中に得られたスコア
+    int nowScore;
+    //敵の存在の確認
+    GameObject enemy;
 
 	// Use this for initialization
 	void Start () {
@@ -61,7 +68,14 @@ public class Manager : MonoBehaviour {
 		GameOpening();
 		//倒した敵の数
         countDestroyEnemy = 0;
-	}
+        //色相
+        hueTitle = 0;
+        hueYourScore = 0;
+        //ゲーム中に得られたスコア
+        nowScore = 0;
+        //敵の存在の確認
+        enemy = GameObject.Find("Enemy");
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -106,12 +120,25 @@ public class Manager : MonoBehaviour {
         continuePanelText.SetActive(false);
 	}
 	//オブジェクトやスコアを初期位置に戻す
-	void AllInit(){
-		//FindObjectOfType<PlayerControl>().InitPlayer();
-        //FindObjectOfType<CameraControl>().InitCamera();
-        //FindObjectOfType<ScoreUi>().InitScore();
-        //FindObjectOfType<LifeUi>().InitLife();
-	}
+	void AllInit()
+    {
+        //敵の初期化
+        if (enemy != null)
+        {
+            FindObjectOfType<EnemyControl>().InitEnemy();
+        }
+        //カメラの初期化
+        FindObjectOfType<CameraControl>().InitCamera();
+        //スコアの初期化
+        FindObjectOfType<ScoreUi>().InitScore();
+        countDestroyEnemy = 0;
+        //ライフの初期化
+        FindObjectOfType<LifeUi>().InitLife();  
+        //タイムの初期化
+        FindObjectOfType<TimeUi>().InitTime();  
+        //プレイヤーの初期化？？
+        //FindObjectOfType<PlayerControl>().InitPlayer();
+    }
 	//ステートによる、ゲーム画面の切り分け
 	public void Dispatch(GameState state){
 		GameState oldState = currentState;
@@ -146,30 +173,42 @@ public class Manager : MonoBehaviour {
 		//タイトルを表示する
 		panel.SetActive(true);
         title.SetActive(true);
-		SetTitle("Game Start", Color.HSVToRGB(35,95,100));
+        hueTitle = 35;
+       float hueTitleChanged = hueTitle / 360;
+        SetTitle("Game Start", Color.HSVToRGB(0.3f,1,1));
         //トータルスコアの表示をかえる
 		yourScore.SetActive(true);
-		SetYourScoer("まばたきかSpaceキーを押してください", Color.HSVToRGB(50, 95, 0));
-
-	}
+        hueYourScore = 75;
+        float hueYourScoreCanged = hueYourScore / 360;
+        SetYourScoer("まばたきかSpaceキーを押してください", Color.HSVToRGB(0.1f, 1, 1));
+        //オブジェクトやスコアを初期位置に戻す
+        AllInit();
+    }
     //ゲームスタート処理
 	void GameStart(){
 		//パネルの非活性化
 		ClosePanel();
-		//オブジェクトやスコアを初期位置に戻す
-        AllInit();
 	}
     //ゲームクリアー処理
 	void GameClear(){
 		//タイトルを変更する
-		SetTitle("Game Clear!!", Color.HSVToRGB(50, 95, 0));
-		//パネルを表示する
-		OpenPanel();
+		SetTitle("Game Clear!!", Color.HSVToRGB(0.2f, 1, 1));
+        //トータルスコアを変更する
+        nowScore = FindObjectOfType<ScoreUi>().score;
+        SetYourScoer("Your Score:" + nowScore, Color.HSVToRGB(0.1f, 1, 1));
+        //パネルを表示する
+        OpenPanel();
 	}
     //ゲームオーバー処理
-	void GameOver(){
-		
-	}
+	public void GameOver(){
+        //タイトルを変更する
+        SetTitle("Game Over!!", Color.HSVToRGB(0, 1, 1));
+        //トータルスコアを変更する
+        nowScore = FindObjectOfType<ScoreUi>().score;
+        SetYourScoer("Your Score:" + nowScore, Color.HSVToRGB(0.1f, 1, 1));
+        //パネルを表示する
+        OpenPanel();
+    }
     //パネルタイトルの変更
 	void SetTitle(string message, Color color){
 		titleText.text = message;
