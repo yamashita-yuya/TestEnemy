@@ -59,6 +59,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\effects\exploderComponents\ExploderComponent.cs" />
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\effects\exploderComponents\LightComponent.cs" />
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\effects\exploderComponents\ParticleComponent.cs" />
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\effects\exploderComponents\PseudoVolumetricComponent.cs" />
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\effects\exploderComponents\VolumetricComponent.cs" />
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\effects\exploderComponents\VolumetricComponent2D.cs" />
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\effects\PseudoVolumetricExplosion.cs" />
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\exploders\Exploder.cs" />
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\exploders\Exploder2D.cs" />
+    <Compile Include="Assets\Effects\True Explosions\System\Scripts\exploders\SphereExploder.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\EnemyBullet.cs" />
@@ -71,17 +81,7 @@
     <Compile Include="Assets\Scripts\PlayUi\ScoreUi.cs" />
     <Compile Include="Assets\Scripts\PlayUi\TimeUi.cs" />
     <Compile Include="Assets\Scripts\Trap.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\effects\exploderComponents\ExploderComponent.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\effects\exploderComponents\LightComponent.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\effects\exploderComponents\ParticleComponent.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\effects\exploderComponents\PseudoVolumetricComponent.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\effects\exploderComponents\VolumetricComponent.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\effects\exploderComponents\VolumetricComponent2D.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\effects\PseudoVolumetricExplosion.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\exploders\Exploder.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\exploders\Exploder2D.cs" />
-    <Compile Include="Assets\True Explosions\System\Scripts\exploders\SphereExploder.cs" />
-    <None Include="Assets\True Explosions\System\Shaders\SphereVolumetricExplosion.shader" />
+    <None Include="Assets\Effects\True Explosions\System\Shaders\SphereVolumetricExplosion.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/admin/Study/vra/TestEnemy/EnemyTest/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
